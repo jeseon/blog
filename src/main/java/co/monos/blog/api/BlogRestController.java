@@ -1,4 +1,4 @@
-package co.monos.blog;
+package co.monos.blog.api;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ import co.monos.blog.dao.PostDao;
 import co.monos.blog.domain.Post;
 
 @RestController
-public class PostRestController {
+public class BlogRestController {
 	@Autowired
 	PostDao postDao;
 	
