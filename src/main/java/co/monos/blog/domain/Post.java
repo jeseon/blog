@@ -1,5 +1,7 @@
 package co.monos.blog.domain;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,6 +14,7 @@ public class Post {
 	@Id
 	@GeneratedValue
 	int id;
-	String title;
+	String subject;
 	String content;
+	Date regDate;
 }
