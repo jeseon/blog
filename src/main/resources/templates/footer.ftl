@@ -34,6 +34,10 @@
             </div>
         </div>
     </footer>
+    
+	<script src="/webjars/jquery/3.1.1/dist/jquery.min.js"></script>
+	<script src="/webjars/bootstrap/3.3.7/dist/js/bootstrap.min.js"></script>
+	<script src="/webjars/zenpassvpn-startbootstrap-clean-blog/1.0.4/js/clean-blog.min.js"></script>
 
 </body>
 </html>

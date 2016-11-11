@@ -25,7 +25,7 @@
 			<div class="post-preview">
                 <a href="/post/${post.id}">
                     <h2 class="post-subject">
-                        ${post.subject}
+                        ${post.title}
                     </h2>
                 </a>
                 <p class="post-meta">Posted by <a href="#">Mono</a> on ${post.regDate}</p>

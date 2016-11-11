@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>${post.subject}</h1>
+                    <h1>${post.title}</h1>
                     <h2 class="subheading">부제목</h2>
                     <span class="meta">Posted by <a href="#">Origoni</a> on ${post.regDate}</span>
                 </div>
@@ -24,6 +24,12 @@
                 ${post.content}
             </div>
         </div>
+        
+        <div class="pull-right">
+			<form method="DELETE" action="/post/${post.id}">
+				<button type="submit" class="btn btn-danger">Delete</button>
+			</form>
+		</div>
     </div>
 </article>
 
