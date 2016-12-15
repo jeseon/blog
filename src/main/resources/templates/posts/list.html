@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="layout">
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+<div class="container" layout:fragment="content">
+	<div class="row">
+	    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+			<div class="post-preview" th:each="post : ${postList}">
+	            <a th:href="@{'/posts/' + ${post.id}}">
+	                <h2 class="post-subject" th:text="${post.title}"></h2>
+	            </a>
+	            <p class="post-meta">Posted by <a href="#">Mono</a> on <strong th:text="${#dates.format(post.regDate, 'yyyy-MM-dd')}"></strong></p>
+	        </div>
+	        
+	        <hr/>
+			
+	        <!-- Pager -->
+	        <ul class="pager">
+	            <li class="next">
+	                <a href="#">Older Posts &rarr;</a>
+	            </li>
+	        </ul>
+	    </div>
+	</div>
+</div>
+</body>
+</html>

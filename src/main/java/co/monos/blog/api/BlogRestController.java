@@ -6,13 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.monos.blog.dao.PostDao;
 import co.monos.blog.domain.Post;
+import co.monos.blog.service.PostService;
 
 @RestController
 public class BlogRestController {
 	@Autowired
-	PostDao postDao;
+	private PostService postService;
 	
 	@RequestMapping("/api")
 	public String index() {
@@ -21,11 +21,11 @@ public class BlogRestController {
 	
 	@RequestMapping("/api/add")
 	public Post add(Post post) {
-		return postDao.save(post);
+		return postService.save(post);
 	}
 	
 	@RequestMapping("/api/list")
 	public List<Post> list(Post post) {
-		return postDao.findAll();
+		return postService.getList();
 	}
 }

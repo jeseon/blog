@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html
+    xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorator="layout">
+<head>
+    <title>Page Title</title>
+</head>
+<body>
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image:url('/webjars/zenpassvpn-startbootstrap-clean-blog/1.0.4/img/post-bg.jpg')" layout:fragment="pageHeader">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1 th:text="${post.title}"></h1>
+                    <h2 class="subheading">부제목</h2>
+                    <span class="meta">Posted by <a href="#">Monos</a> on <span th:text="${post.regDate}"></span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container" layout:fragment="content">
+	<!-- Post Content -->
+	<article>
+	    <div class="container">
+	        <div class="row">
+	            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1" th:text="${post.content}"></div>
+	        </div>
+	        
+	        <div class="pull-right">
+				<form th:method="delete" th:action="@{'/posts/' + ${post.id}}">
+					<button type="submit" class="btn btn-danger">Delete</button>
+				</form>
+			</div>
+	    </div>
+	</article>
+</div>
+</body>
+</html>

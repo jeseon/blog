@@ -4,6 +4,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import co.monos.blog.domain.Post;
 
-public interface PostDao extends JpaRepository<Post, Integer> {
-
+public interface PostRepository extends JpaRepository<Post, Integer> {
 }
