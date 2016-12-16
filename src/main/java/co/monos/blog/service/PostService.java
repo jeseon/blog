@@ -18,20 +18,21 @@ public class PostService {
 	
 	public Post save(Post post) {
 		post.setRegDate(new Date());
+		
 		return postRepository.save(post);
 	}
 
 	public void delete(int id) {
 		postRepository.delete(id);
 	}
-	
-	@Transactional(readOnly = true)
-	public List<Post> getList() {
-		return postRepository.findAll();
-	}
 
 	@Transactional(readOnly = true)
 	public Post get(int id) {
 		return postRepository.findOne(id);
+	}
+	
+	@Transactional(readOnly = true)
+	public List<Post> getList() {
+		return postRepository.findAll();
 	}
 }

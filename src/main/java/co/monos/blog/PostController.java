@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-
 import co.monos.blog.domain.Post;
 import co.monos.blog.service.PostService;
 
@@ -40,7 +38,7 @@ public class PostController {
 	}
 
 	@GetMapping("/new")
-	public String form(Post post) {
+	public String write(Post post) {
 		return "posts/new";
 	}
 
@@ -52,7 +50,7 @@ public class PostController {
 	}
 
 	@DeleteMapping("/{id}")
-	public @ResponseBody String delete(@PathVariable int id) {
+	public String delete(@PathVariable int id) {
 		postService.delete(id);
 		
 		return "redirect:/posts";
