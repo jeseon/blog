@@ -43,7 +43,7 @@ public class PostController {
 	}
 
 	@PostMapping("/new")
-	public String write(@Valid Post post, BindingResult bindingResult, Model model) {
+	public String write(@Valid Post post, BindingResult bindingResult) {
 		Post newPost = postService.save(post);
 		
 		return "redirect:/posts/" + newPost.getId();
