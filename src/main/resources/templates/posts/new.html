@@ -18,7 +18,7 @@
 			
 			<hr style="margin-top: 2px; border-top: 1px solid #999;">
 			
-			<textarea name="content" style="min-height:200px;"></textarea>
+			<textarea id="content" name="content" style="min-height:200px;"></textarea>
 			
 			<hr/>
 	
@@ -27,7 +27,7 @@
 		</form>
 		
 		<script>
-			var editor = new MediumEditor('textarea[name=content]');
+			var editor = new MediumEditor('#content');
 		</script>
 	</div>
 </body>
