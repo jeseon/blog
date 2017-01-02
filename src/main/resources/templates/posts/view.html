@@ -32,10 +32,8 @@
 		        </div>
 		        
 		        <div class="pull-right">
-					<form th:method="delete" th:action="@{'/posts/' + ${post.id}}">
-				        <a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-warning">Edit</a>
-						<button type="submit" class="btn btn-danger">Delete</button>
-					</form>
+			        <a th:href="@{/posts/{id}/edit(id=${post.id})}" class="btn btn-warning">Edit</a>
+					<a th:href="@{/posts/{id}/delete(id=${post.id})}" class="btn btn-danger">Delete</a>
 				</div>
 		    </div>
 		</article>
