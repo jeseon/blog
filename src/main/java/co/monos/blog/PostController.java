@@ -28,6 +28,22 @@ public class PostController {
 		model.addAttribute("postList", postList);
 		return "posts/list";
 	}
+
+	@GetMapping("/new")
+	public String write(Post post) {
+		return "posts/new";
+	}
+
+	@PostMapping("/new")
+	public String write(@Valid Post post, BindingResult bindingResult) {
+		if (bindingResult.hasErrors()) {
+	        return "posts/new";
+	    }
+		
+		Post newPost = postService.save(post);
+		
+		return "redirect:/posts/" + newPost.getId();
+	}
 	
 	@GetMapping("/{id}")
 	public String view(@PathVariable int id, Model model) {
@@ -37,22 +53,18 @@ public class PostController {
 		return "posts/view";
 	}
 
-	@GetMapping("/new")
-	public String write(Post post) {
-		return "posts/new";
-	}
-
-	@PostMapping("/new")
-	public String write(@Valid Post post, BindingResult bindingResult) {
-		Post newPost = postService.save(post);
-		
-		return "redirect:/posts/" + newPost.getId();
-	}
-
 	@DeleteMapping("/{id}")
 	public String delete(@PathVariable int id) {
 		postService.delete(id);
 		
 		return "redirect:/posts";
+	}
+	
+	@GetMapping("/{id}/edit")
+	public String edit(@PathVariable int id, Model model) {
+		Post post = postService.get(id);
+		model.addAttribute("post", post);
+
+		return "posts/new";
 	}
 }
