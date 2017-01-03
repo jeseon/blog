@@ -20,10 +20,18 @@ public class User {
 	@NotNull
 	@Size(min=1, max=255)
 	private String email;
+	
+	@NotNull
+	@Size(min=1, max=255)
+	private String username;
 
 	@NotNull
 	@Size(min=1, max=50)
-	private String passwd;
+	private String password;
 
-	private Date regDate;
+	private Date createdAt;
+	private boolean isEnabled;
+	private boolean isAccountNonExpired;
+    private boolean isAccountNonLocked;
+    private boolean isCredentialsNonExpired;
 }

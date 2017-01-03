@@ -11,9 +11,9 @@
 	<div class="container" th:object="${user}" layout:fragment="content">
 		<form th:action="@{/user/login}" method="POST">
 		    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-		    <p><input type="text" th:field="*{email}" placeholder="Email"/></p>
-			<p><input type="password" th:field="*{passwd}" placeholder="Password"/></p>
-			<button>Submit</button>
+		    <p><input type="text" name="email" placeholder="Email"/></p>
+			<p><input type="password" name="passwd" placeholder="Password"/></p>
+			<p><button>Submit</button></p>
 		</form>
 	</div>
 </body>

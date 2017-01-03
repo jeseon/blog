@@ -17,7 +17,7 @@ public class PostService {
 	private PostRepository postRepository;
 	
 	public Post save(Post post) {
-		post.setRegDate(new Date());
+		post.setCreatedAt(new Date());
 		
 		return postRepository.save(post);
 	}

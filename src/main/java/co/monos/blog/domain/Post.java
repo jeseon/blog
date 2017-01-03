@@ -32,7 +32,7 @@ public class Post {
 	@Size(min=1, max=4000)
 	private String content;
 	
-	private Date regDate;
+	private Date createdAt;
 	
 	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.ALL)
 	private User user;

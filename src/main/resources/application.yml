@@ -2,9 +2,15 @@ spring:
   thymeleaf:
     mode: HTML
     cache: false
-  h2:
-    console:
-      enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mariadb://monos.cyt30p97bce6.ap-northeast-2.rds.amazonaws.com:3306/blog?useUnicode=true&charaterEncoding=utf-8
+    username: root
+    password: 25884447
+    driver-class-name: org.mariadb.jdbc.Driver
 
 logging:
   level:
