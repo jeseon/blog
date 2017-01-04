@@ -9,7 +9,7 @@ import co.monos.blog.dao.UserRepository;
 import co.monos.blog.domain.User;
 
 @Component
-public class AppCtxRefreshEvent implements ApplicationListener<ContextRefreshedEvent> {
+public class AppContextRefreshEvent implements ApplicationListener<ContextRefreshedEvent> {
 
     @Autowired
     private UserRepository userRepository;
