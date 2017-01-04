@@ -14,7 +14,7 @@
 	            <a th:href="@{'/posts/' + ${post.id}}">
 	                <h2 class="post-subject" th:text="${post.title}"></h2>
 	            </a>
-	            <p class="post-meta">Posted by <a href="#">Mono</a> on <strong th:text="${#dates.format(post.regDate, 'yyyy-MM-dd')}"></strong></p>
+	            <p class="post-meta">Posted by <a href="#">Mono</a> on <strong th:text="${#dates.format(post.createdAt, 'yyyy-MM-dd')}"></strong></p>
 	        </div>
 	        
 	        <hr/>

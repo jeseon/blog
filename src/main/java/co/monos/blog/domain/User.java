@@ -22,7 +22,7 @@ public class User {
 	private String email;
 	
 	@NotNull
-	@Size(min=1, max=255)
+	@Size(min=1, max=50)
 	private String username;
 
 	@NotNull
@@ -30,8 +30,4 @@ public class User {
 	private String password;
 
 	private Date createdAt;
-	private boolean isEnabled;
-	private boolean isAccountNonExpired;
-    private boolean isAccountNonLocked;
-    private boolean isCredentialsNonExpired;
 }
