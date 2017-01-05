@@ -1,6 +1,5 @@
 package co.monos.blog.service;
 
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,6 @@ public class PostService {
 	private PostRepository postRepository;
 	
 	public Post save(Post post) {
-		post.setCreatedAt(new Date());
-		
 		return postRepository.save(post);
 	}
 

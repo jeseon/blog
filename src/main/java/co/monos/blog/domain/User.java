@@ -1,5 +1,6 @@
 package co.monos.blog.domain;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -28,6 +29,7 @@ public class User {
 	@NotNull
 	@Size(min=1, max=50)
 	private String password;
-
-	private Date createdAt;
+	
+	@NotNull
+	private Date createdAt = Calendar.getInstance().getTime();
 }
