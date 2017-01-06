@@ -14,7 +14,7 @@ import co.monos.blog.domain.UserInfo;
 
 @Service
 @Transactional
-public class UserService implements UserDetailsService {
+public class MemberService implements UserDetailsService {
     @Autowired
     MemberRepository memberRepository;
 

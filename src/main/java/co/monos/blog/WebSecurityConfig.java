@@ -7,13 +7,13 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 
-import co.monos.blog.service.UserService;
+import co.monos.blog.service.MemberService;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
-	private UserService userService;
+	private MemberService memberService;
 	
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -34,6 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService);
+        auth.userDetailsService(memberService);
     }   
 }
