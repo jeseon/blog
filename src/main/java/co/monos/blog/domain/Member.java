@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class User {
+public class Member {
 	@Id
 	@GeneratedValue
 	private int id;

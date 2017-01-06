@@ -5,13 +5,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import co.monos.blog.dao.UserRepository;
+import co.monos.blog.dao.MemberRepository;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class MemberController {
 	@Autowired
-    UserRepository userRepository;
+    MemberRepository membetRepository;
 	
 	@GetMapping("/login")
     public String login() {

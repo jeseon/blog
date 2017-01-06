@@ -35,5 +35,5 @@ public class Post {
 	private Date createdAt = Calendar.getInstance().getTime();
 
 	@ManyToOne
-	private User user;
+	private Member member;
 }
