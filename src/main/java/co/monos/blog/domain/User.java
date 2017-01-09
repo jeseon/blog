@@ -12,8 +12,8 @@ public class User extends org.springframework.security.core.userdetails.User {
 		return member;
 	}
 	
-	public User(Member member, String username, String password, Collection<? extends GrantedAuthority> authorities) {
-		super(username, password, authorities);
+	public User(Member member, Collection<? extends GrantedAuthority> authorities) {
+		super(member.getUsername(), member.getEncodedPassword(), authorities);
 		
 		this.member = member;
 	}

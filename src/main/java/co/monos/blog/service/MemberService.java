@@ -16,12 +16,12 @@ import co.monos.blog.domain.User;
 @Transactional
 public class MemberService implements UserDetailsService {
     @Autowired
-    MemberRepository memberRepository;
+    private MemberRepository memberRepository;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     	Member member = memberRepository.findByUsernameIgnoreCase(username);
     	
-        return (UserDetails) new User(member, member.getUsername(), member.getEncodedPassword(), AuthorityUtils.createAuthorityList("ROLE_USER"));
+        return new User(member, AuthorityUtils.createAuthorityList("ROLE_USER"));
     }
 }

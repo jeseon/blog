@@ -27,7 +27,6 @@ public class PostController {
 	public String list(Model model) {
 		List<Post> postList = postService.getList();
 		model.addAttribute("postList", postList);
-		System.out.println(new BCryptPasswordEncoder().encode("1111"));
 		
 		return "posts/list";
 	}
