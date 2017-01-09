@@ -28,7 +28,7 @@ public class Member {
 
 	@NotNull
 	@Size(min=1, max=50)
-	private String password;
+	private String encodedPassword;
 	
 	@NotNull
 	private Date createdAt = Calendar.getInstance().getTime();

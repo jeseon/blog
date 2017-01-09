@@ -1,3 +1,7 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
 spring:
   thymeleaf:
     mode: HTML
@@ -7,7 +11,7 @@ spring:
     hibernate:
       ddl-auto: update
   datasource:
-    url: jdbc:mariadb://monos.cyt30p97bce6.ap-northeast-2.rds.amazonaws.com:3306/blog?useUnicode=true&charaterEncoding=utf-8
+    url: jdbc:mariadb://monos.cyt30p97bce6.ap-northeast-2.rds.amazonaws.com:3306/blog
     username: root
     password: 25884447
     driver-class-name: org.mariadb.jdbc.Driver

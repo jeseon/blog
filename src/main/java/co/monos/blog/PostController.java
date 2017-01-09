@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import co.monos.blog.domain.Post;
 import co.monos.blog.service.PostService;
 
@@ -25,6 +27,8 @@ public class PostController {
 	public String list(Model model) {
 		List<Post> postList = postService.getList();
 		model.addAttribute("postList", postList);
+		System.out.println(new BCryptPasswordEncoder().encode("1111"));
+		
 		return "posts/list";
 	}
 

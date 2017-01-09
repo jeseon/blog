@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import co.monos.blog.dao.MemberRepository;
 import co.monos.blog.domain.Member;
-import co.monos.blog.domain.UserInfo;
+import co.monos.blog.domain.User;
 
 @Service
 @Transactional
@@ -22,6 +22,6 @@ public class MemberService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     	Member member = memberRepository.findByUsernameIgnoreCase(username);
     	
-        return (UserDetails) new UserInfo(member.getId(), member.getUsername(), member.getPassword(), AuthorityUtils.createAuthorityList("ROLE_USER"));
+        return (UserDetails) new User(member, member.getUsername(), member.getEncodedPassword(), AuthorityUtils.createAuthorityList("ROLE_USER"));
     }
 }

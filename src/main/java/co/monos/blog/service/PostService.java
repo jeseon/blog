@@ -8,11 +8,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import co.monos.blog.dao.MemberRepository;
 import co.monos.blog.dao.PostRepository;
-import co.monos.blog.domain.Member;
 import co.monos.blog.domain.Post;
-import co.monos.blog.domain.UserInfo;
+import co.monos.blog.domain.User;
 
 @Service
 @Transactional
@@ -20,15 +18,11 @@ public class PostService {
 	@Autowired
 	private PostRepository postRepository;
 	
-	@Autowired
-	private MemberRepository memberRepository;
-	
 	public Post save(Post post) {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		UserInfo userInfo = (UserInfo) auth.getPrincipal();
-		Member member = memberRepository.findOne(userInfo.getMemberId());
+		User user = (User) auth.getPrincipal();
 		
-		post.setMember(member);
+		post.setMember(user.getMember());
 		
 		return postRepository.save(post);
 	}
